@@ -1,4 +1,5 @@
 const fs = require('fs');
+require('colors');
 
 const archivo = './db/data.json';
 
@@ -11,7 +12,10 @@ const leerDB = () => {
     if(fs.existsSync(archivo));
 
     const info = fs.readFileSync(archivo, {encoding: 'utf-8'});
-    console.log(info);
+    const data = JSON.parse(info);
+    // console.log(data);
+
+    return data;
 
 }
 module.exports = {
